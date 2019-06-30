@@ -1,0 +1,27 @@
+node('master'){
+    
+    stage('checkout'){
+        git 'https://github.com/jabedhasan21/java-hello-world-with-maven.git'
+    }
+    
+    stage('compile'){
+        sh label: '', script: 'mvn compile'
+    }
+    
+    stage('verify'){
+        sh label: '', script: 'mvn verify'
+    }
+    
+    stage('packaging'){
+        sh label: '', script: 'mvn package'
+    }
+    
+    stage('install'){
+        sh label: '', script: 'mvn install'
+    }
+    
+    stage('email'){
+        emailext body: 'build done with checkout test and reporting', subject: 'build execution completed', to: 'iamrd45@gmail.com'
+    }
+ 
+}
