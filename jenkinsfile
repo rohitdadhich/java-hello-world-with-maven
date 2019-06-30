@@ -1,7 +1,7 @@
 node('master'){
     
     stage('checkout'){
-        git 'https://github.com/jabedhasan21/java-hello-world-with-maven.git'
+        git 'https://github.com/rohitdadhich/java-hello-world-with-maven.git'
     }
     
     stage('compile'){
